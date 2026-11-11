@@ -1,18 +1,23 @@
+# Python environments
 .venv/
-.venv-engine/
+.venv-*/
 __pycache__/
 *.pyc
-.pytest_cache/
 
-# Private telemetry and generated alerts
-events/
-results/
-*.log
-*.evtx
-*.db
-*.sqlite
-*.jsonl
-
-# Local secrets
+# Environment variables and credentials
 .env
 .env.*
+!.env.example
+*.pem
+*.key
+
+# Generated telemetry and results
+**/events/
+**/results/
+*.evtx
+*.jsonl
+*.log
+
+# OS and editor files
+.DS_Store
+*~
