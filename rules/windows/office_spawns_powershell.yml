@@ -1,0 +1,36 @@
+
+title: NIGHTSHIFT Office Application Spawning PowerShell
+id: 83a7ed48-68a6-4c42-96df-970c9fcb7b72
+status: experimental
+description: Detects Office applications launching PowerShell.
+author: NIGHTSHIFT Security Lab
+date: 2026-11-11
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection_parent:
+    ParentImage|endswith:
+      - '\winword.exe'
+      - '\excel.exe'
+      - '\powerpnt.exe'
+      - '\outlook.exe'
+  selection_child:
+    Image|endswith:
+      - '\powershell.exe'
+      - '\pwsh.exe'
+  condition: selection_parent and selection_child
+fields:
+  - UtcTime
+  - Image
+  - CommandLine
+  - ParentImage
+  - User
+  - ProcessGuid
+falsepositives:
+  - Approved Office automation
+  - Enterprise add-ins or administrative workflows
+level: high
+tags:
+  - attack.execution
+  - attack.t1059.001

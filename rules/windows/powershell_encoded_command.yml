@@ -1,0 +1,36 @@
+
+title: NIGHTSHIFT Encoded PowerShell Execution
+id: 6e84c4f1-5db0-44fa-9f7e-99f92a47e111
+status: experimental
+description: Detects PowerShell processes using encoded command arguments.
+author: NIGHTSHIFT Security Lab
+date: 2026-11-11
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection_image:
+    Image|endswith:
+      - '\powershell.exe'
+      - '\pwsh.exe'
+  selection_command:
+    CommandLine|contains:
+      - ' -EncodedCommand '
+      - ' -enc '
+      - ' -e '
+      - ' -EncodedCommand:'
+  condition: selection_image and selection_command
+fields:
+  - UtcTime
+  - Image
+  - CommandLine
+  - ParentImage
+  - User
+  - ProcessGuid
+falsepositives:
+  - Legitimate administration scripts
+  - Software deployment tools
+level: medium
+tags:
+  - attack.execution
+  - attack.t1059.001
