@@ -1,0 +1,35 @@
+title: NIGHTSHIFT PowerShell Lab Marker
+id: 8c7b8b26-9624-4e32-994b-f0b8b9f83e61
+status: test
+description: Detects the NIGHTSHIFT-TEST marker in PowerShell process creation events.
+author: NIGHTSHIFT Security Lab
+date: 2026-11-11
+
+logsource:
+  product: windows
+  category: process_creation
+
+detection:
+  selection:
+    Image|endswith:
+      - '\powershell.exe'
+      - '\pwsh.exe'
+    CommandLine|contains: 'NIGHTSHIFT-FORWARD-TEST'
+  condition: selection
+
+fields:
+  - UtcTime
+  - Image
+  - CommandLine
+  - ParentImage
+  - User
+  - ProcessGuid
+
+falsepositives:
+  - Authorized NIGHTSHIFT lab exercises
+
+level: informational
+
+tags:
+  - attack.execution
+  - attack.t1059.001

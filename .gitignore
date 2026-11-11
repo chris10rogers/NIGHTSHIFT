@@ -1,0 +1,18 @@
+.venv/
+.venv-engine/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Private telemetry and generated alerts
+events/
+results/
+*.log
+*.evtx
+*.db
+*.sqlite
+*.jsonl
+
+# Local secrets
+.env
+.env.*
