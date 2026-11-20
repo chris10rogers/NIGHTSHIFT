@@ -199,8 +199,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "98ef46faa6d58914",
+  "active": "76515fe6290a51bd",
   "lastOpenFiles": [
+    "detections/README.md",
+    "detections/detections/README.md",
+    "detections/detections",
+    "detections/tests",
+    "detections/elastic",
+    "detections/sigma",
+    "detections",
     "sync-test.md.md",
     "README.md",
     "notes",
