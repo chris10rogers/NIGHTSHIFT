@@ -21,3 +21,17 @@ __pycache__/
 # OS and editor files
 .DS_Store
 *~
+
+# Obsidian workspace and local settings
+.obsidian/
+
+# Python virtual environments
+.venv/
+
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Private working notes
+notes/private/
