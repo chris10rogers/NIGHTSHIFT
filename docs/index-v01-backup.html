@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NIGHTSHIFT | Security Operations</title>
+
+  <style>
+    :root {
+      --bg: #080d18;
+      --panel: #121e30;
+      --cyan: #62dce8;
+      --purple: #a68bfa;
+      --text: #dce8f5;
+      --muted: #91a4bd;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Courier New", monospace;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 22px 8%;
+      border-bottom: 1px solid #26354b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      color: var(--cyan);
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    nav a:hover {
+      color: var(--cyan);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 25px;
+    }
+
+    .status {
+      color: #70d8b2;
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 7vw, 76px);
+      margin: 20px 0;
+      line-height: 1.1;
+    }
+
+    h1 span {
+      color: var(--cyan);
+    }
+
+    .intro {
+      color: var(--muted);
+      max-width: 650px;
+      font-size: 17px;
+    }
+
+    h2 {
+      color: var(--cyan);
+      margin-top: 80px;
+      font-size: 22px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid #26354b;
+      padding: 25px;
+      border-radius: 8px;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      border-color: var(--cyan);
+      transform: translateY(-4px);
+    }
+
+    .card small {
+      color: var(--purple);
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .card a {
+      color: var(--cyan);
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px;
+      border-top: 1px solid #26354b;
+      color: var(--muted);
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">NIGHTSHIFT_</div>
+    <nav>
+      <a href="#home">HOME</a>
+      <a href="#projects">PROJECTS</a>
+      <a href="#about">ABOUT</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <div class="status">
+        ● SYSTEM ONLINE // PORTFOLIO ACTIVE
+      </div>
+
+      <h1>
+        Building systems.<br>
+        <span>Breaking assumptions.</span>
+      </h1>
+
+      <p class="intro">
+        A cybersecurity portfolio documenting
+        infrastructure, system administration,
+        threat detection, and technical investigations.
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>> ACTIVE OPERATIONS</h2>
+
+      <div class="projects">
+
+        <div class="card">
+          <small>PROJECT 001</small>
+          <h3>Home Lab Infrastructure</h3>
+          <p>
+            Building a virtualized environment
+            for security research and experimentation.
+          </p>
+          <a href="https://github.com/chris10rogers/NIGHTSHIFT/tree/main/projects/01-homelab-infrastructure/">
+            VIEW PROJECT →
+          </a>
+        </div>
+
+        <div class="card">
+          <small>PROJECT 002</small>
+          <h3>Windows Telemetry</h3>
+          <p>
+            Exploring Windows event logging,
+            Sysmon, and security visibility.
+          </p>
+        </div>
+
+        <div class="card">
+          <small>PROJECT 003</small>
+          <h3>Detection Engineering</h3>
+          <p>
+            Developing detection techniques
+            and documenting security experiments.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>> ABOUT NIGHTSHIFT</h2>
+
+      <p class="intro">
+        NIGHTSHIFT is an evolving collection of
+        technical projects, security labs, and
+        documented investigations.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    NIGHTSHIFT // END OF TRANSMISSION
+  </footer>
+
+</body>
+</html>
